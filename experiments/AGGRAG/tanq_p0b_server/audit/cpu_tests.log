@@ -1,0 +1,27 @@
+test_exact_coordinates (test_server_smoke.QuoteLocationTests.test_exact_coordinates) ... ok
+test_repeated_quote_preserves_ambiguity (test_server_smoke.QuoteLocationTests.test_repeated_quote_preserves_ambiguity) ... ok
+test_url_is_not_factual_quote (test_server_smoke.QuoteLocationTests.test_url_is_not_factual_quote) ... ok
+test_budget_persists_and_blocks_tenth (test_server_smoke.ServerSmokeTests.test_budget_persists_and_blocks_tenth) ... ok
+test_changed_source_sha_stops (test_server_smoke.ServerSmokeTests.test_changed_source_sha_stops) ... ok
+test_empty_result_report_does_not_claim_success (test_server_smoke.ServerSmokeTests.test_empty_result_report_does_not_claim_success) ... ok
+test_failed_call_consumes_budget (test_server_smoke.ServerSmokeTests.test_failed_call_consumes_budget) ... ok
+test_freeze_ids_order (test_server_smoke.ServerSmokeTests.test_freeze_ids_order) ... ok
+test_join_uses_subject_key (test_server_smoke.ServerSmokeTests.test_join_uses_subject_key) ... ok
+test_json_shape_rejected (test_server_smoke.ServerSmokeTests.test_json_shape_rejected) ... ok
+test_missing_model_clear_block (test_server_smoke.ServerSmokeTests.test_missing_model_clear_block) ... ok
+test_missing_private_data_stops (test_server_smoke.ServerSmokeTests.test_missing_private_data_stops) ... ok
+test_no_data_files_in_code (test_server_smoke.ServerSmokeTests.test_no_data_files_in_code) ... ok
+test_prediction_freeze_tamper_blocked (test_server_smoke.ServerSmokeTests.test_prediction_freeze_tamper_blocked) ... ok
+test_predictor_never_reads_gold (test_server_smoke.ServerSmokeTests.test_predictor_never_reads_gold) ... ok
+test_prompt_contract_not_regenerated (test_server_smoke.ServerSmokeTests.test_prompt_contract_not_regenerated) ... ok
+test_reserved_output_limits (test_server_smoke.ServerSmokeTests.test_reserved_output_limits) ... ok
+test_score_verifies_prediction_before_gold (test_server_smoke.ServerSmokeTests.test_score_verifies_prediction_before_gold) ... ok
+test_single_generation_timeout_kills (test_server_smoke.ServerSmokeTests.test_single_generation_timeout_kills) ... ok
+test_sql_writes_blocked (test_server_smoke.ServerSmokeTests.test_sql_writes_blocked) ... ok
+test_wall_timeout_kills_owned_group (test_server_smoke.ServerSmokeTests.test_wall_timeout_kills_owned_group) ... ok
+test_wrong_quote_not_verified (test_server_smoke.ServerSmokeTests.test_wrong_quote_not_verified) ... ok
+
+----------------------------------------------------------------------
+Ran 22 tests in 0.271s
+
+OK

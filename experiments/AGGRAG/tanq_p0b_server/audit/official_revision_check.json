@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "url": "https://huggingface.co/api/models/Qwen/Qwen2.5-7B-Instruct-AWQ/revision/b25037543e9394b818fdfca67ab2a00ecc7dd641",
+  "model": "Qwen/Qwen2.5-7B-Instruct-AWQ",
+  "revision": "b25037543e9394b818fdfca67ab2a00ecc7dd641",
+  "weight_downloaded": false,
+  "note": "Small official API metadata only; server downloader repeats verification before weights"
+}

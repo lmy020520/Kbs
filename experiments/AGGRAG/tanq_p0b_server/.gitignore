@@ -1,0 +1,13 @@
+results/
+private/
+*.jsonl
+models/
+.cache/
+.venv*/
+__pycache__/
+*.pyc
+*.safetensors
+*.gguf
+*.bin
+*.tar*
+.env*

@@ -1,0 +1,17 @@
+{
+  "status": "PRE_REGISTERED_NOT_RUN",
+  "arm": "B1-Batch",
+  "predictor_inputs": "same source_only.jsonl; no gold",
+  "prompt": "Extract ALL relevant subject-predicate-object candidates from ALL the supplied evidence units using the query predicates, including possible non-answer entities. Return one JSON object {\"facts\":[{\"subject\":\"name\",\"predicate\":\"canonical predicate\",\"object\":\"value\",\"evidence_id\":\"supplied source ID\",\"quote\":\"verbatim contiguous substring in that specific source\"}]}. Preserve qualifications and uncertainty; do not invent identity links. Each fact must cite its own source, not another unit. Empty list allowed. A literal quote is a locator, not semantic proof. Do not output a final answer table or Markdown fences.",
+  "max_context_tokens": 32768,
+  "max_new_tokens_per_batch": 8192,
+  "predicate_token_reserve": 1024,
+  "margin": 128,
+  "packing": "preserve original source ID order; greedy contiguous full units; no truncation, no dropping, no splitting within unit",
+  "plan_prompt": "unchanged original B1 question-only plan",
+  "normalization_join": "unchanged original B1 normalized subject-key / read-only SQLite",
+  "schema_change": "each extracted fact carries evidence_id for per-source literal quote validation",
+  "batch_plan": "results/token_and_batch_plan.json",
+  "fallback": "If predicates exceed reserve or tokenizer/model revision differs, STOP and register engineering amendment before inference; no silent repacking",
+  "real_model_runs": 0
+}

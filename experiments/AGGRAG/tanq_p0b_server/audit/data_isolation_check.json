@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "private_samples": 3,
+  "source_SHA_ID_order_verified": true,
+  "long_source_text_overlap_in_public_files": 0,
+  "long_excerpt_fragments_checked": 258,
+  "gold_in_predictor_input": false,
+  "metadata_only_revision_verified": true
+}
