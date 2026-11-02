@@ -1,0 +1,27 @@
+{
+  "scope": "UNIT_ONLY_SYNTHETIC_NOT_TANQ",
+  "question": "Which devices are lab devices and owned by Owner-A? Give color and mass.",
+  "plan": {
+    "version":"r2","entity_type":"device",
+    "predicates":[
+      {"name":"class","kind":"text","cardinality":"many"},
+      {"name":"owner","kind":"text","cardinality":"one"},
+      {"name":"color","kind":"text","cardinality":"one"},
+      {"name":"mass","kind":"number","cardinality":"one"}
+    ],
+    "outputs":[{"predicate":"color","column":"color"},{"predicate":"mass","column":"mass"}],
+    "filter":{"op":"and","conditions":[{"predicate":"class","operator":"eq","value":"lab"},{"predicate":"owner","operator":"eq","value":"Owner-A"}]}
+  },
+  "units":[
+    {"evidence_id":"UNIT-A","source":{"found_in_url":"https://unit.invalid/wiki/A","proof_text":"Device A is a lab device. Device A is owned by Owner-A. Device A is red. Device A has mass 4."}},
+    {"evidence_id":"UNIT-A-OTHER","source":{"found_in_url":"http://unit.invalid/wiki/A","proof_text":"Alternate description of Device A."}},
+    {"evidence_id":"UNIT-B","source":{"found_in_url":"https://unit.invalid/wiki/B","proof_text":"Device B is blue. Device B has mass 9."}}
+  ],
+  "facts":[
+    {"subject":"Device A","entity_type":"device","predicate":"class","value":"lab","evidence_id":"UNIT-A","quote":"Device A is a lab device."},
+    {"subject":"DEVICE_A","entity_type":"device","predicate":"owner","value":"Owner-A","evidence_id":"UNIT-A","quote":"Device A is owned by Owner-A."},
+    {"subject":"Device A","entity_type":"device","predicate":"color","value":"red","evidence_id":"UNIT-A","quote":"Device A is red."},
+    {"subject":"Device A","entity_type":"device","predicate":"mass","value":4,"evidence_id":"UNIT-A","quote":"Device A has mass 4."},
+    {"subject":"Device B","entity_type":"device","predicate":"color","value":"blue","evidence_id":"UNIT-B","quote":"Device B is blue."}
+  ]
+}

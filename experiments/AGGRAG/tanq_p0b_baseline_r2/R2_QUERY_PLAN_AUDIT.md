@@ -1,0 +1,11 @@
+# 查询计划审计
+
+核心合同见src/contracts.py与src/query.py；新包及映射见src/plan_audit.py。模型不产生可执行SQL。关系表只有程序创建的facts，标识符/比较运算符来自固定代码，条件值参数绑定；SQLite只读授权器阻止其他表和写操作，并有限时进度及行数上限。
+
+AND使用多个同subject_key、同entity_type_key的EXISTS，OR保留原树逻辑；不跨实体凑条件。规范化不推断NYC等语义别名。多值属性可聚合；one属性冲突留痕并使Join标PARTIAL，不选择有利值。
+
+新计划需列出主体、所有输出及谓词关系角色，将问题全部非空白字符映射至query节点。每个输出和筛选叶子必须有原文锚点，值须出现在对应锚点；内容词不可隐藏为syntax或不相符主体类型，显式AND/OR词面须与目标组一致。错误原文坐标不自动恢复。
+
+这只是通用表示/追溯合同，不是完整自然语言语义求解器：拼写、屈折、数值表述、隐含条件及复杂范围可能导致误拒；模型错误映射仍可能通过。因此状态永远PLAN_UNVERIFIED，不给出PLAN_VERIFIED或语义正确率。lexical_trace_status=FAILED或unresolved非空阻断两臂；PASS仅给execution_allowed=true用于开发诊断。后续评分如执行，必须显著披露计划语义未验证，不能以结构通过替代问题语义审核。
+
+没有真实三题特定分支、答案逻辑或Gold谓词；R1遗漏named writer/producer等现象仅用于确定通用失败类型，未重算旧预测。受控新fixture演示完整轨迹可执行、遗漏或隐藏owner条件可阻断，不能冒充TANQ真实题验证成绩。

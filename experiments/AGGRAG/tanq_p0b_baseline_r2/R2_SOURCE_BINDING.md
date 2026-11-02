@@ -1,0 +1,9 @@
+# 来源与主体绑定
+
+沿用R1逐字quote定位：EXACT_SOURCE_MATCH、SAME_PAGE_OTHER_CHUNK、DIFFERENT_PAGE_MATCH、QUOTE_NOT_FOUND、MISSING_QUOTE、AMBIGUOUS_SOURCE、INVALID_EVIDENCE_ID。没有同页或跨页自动重绑定。只有声明Evidence ID内精确定位可机械接受。
+
+每个候选保留原始字段、错误、绑定结果及字符坐标，额外保留 `support_assessment.status=SUBJECT_ATTRIBUTE_SUPPORT_UNVERIFIED`。主体字面是否出现在quote中只作诊断：出现不证明同一实体，不出现也可能是代词或必要上文，均不能自动做语义真假判决。没有可核查语义前提时不声称SUBJECT_SUPPORTED/ATTRIBUTE_SUPPORTED；也不通过一律语义拒绝制造零误连。
+
+Schema错误保留所有逐候选诊断，但不让其进入Join。Schema合法候选按严格字面验证机械接受；Join只能说明对这些未核实语义事实执行查询。记录总候选、接受、拒绝、原因、机械接受覆盖和semantic_support=null/UNVERIFIED；零候选率为null而非100%，空表不等于正确。
+
+历史R0/R1引用统计不变。本轮仅以合成不同页面/同页面fixture验证程序，不重新绑定旧真实输出，不发布新的真实来源通过率或语义正确率。

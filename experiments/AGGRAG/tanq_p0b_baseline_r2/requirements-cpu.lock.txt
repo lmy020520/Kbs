@@ -1,0 +1,8 @@
+attrs==26.1.0
+interegular==0.3.3
+jsonschema==4.26.0
+jsonschema-specifications==2025.9.1
+outlines_core==0.1.26
+referencing==0.37.0
+rpds-py==2026.9.1
+typing_extensions==4.16.0

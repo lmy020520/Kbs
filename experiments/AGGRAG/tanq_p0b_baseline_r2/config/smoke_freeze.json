@@ -1,0 +1,30 @@
+{
+  "status": "PRE_REGISTERED_NOT_RUN_PENDING_APPROVAL",
+  "seed": "AGGRAG-P0B-SMOKE-LENGTH-v1-20261101",
+  "rule": "minimum/lower median/maximum B0 token length among same frozen 30; tie by SHA256(seed|sample_id); no answer read",
+  "samples": [
+    {
+      "sample_id": "469__wikitables_simple__dev@334",
+      "B0_input_tokens": 2380,
+      "source_units": 12,
+      "B1_calls": 13,
+      "B1Batch_calls": 2
+    },
+    {
+      "sample_id": "800__wikidata_simple__dev@567",
+      "B0_input_tokens": 6446,
+      "source_units": 40,
+      "B1_calls": 41,
+      "B1Batch_calls": 2
+    },
+    {
+      "sample_id": "595__wikidata_simple__dev@416",
+      "B0_input_tokens": 22221,
+      "source_units": 37,
+      "B1_calls": 38,
+      "B1Batch_calls": 2
+    }
+  ],
+  "parent_freeze_sha256": "587e122f251624fb8b587b90ac63328c0466281d1c28b0ac17160ea7a8ee6841",
+  "semantic_reference_read": false
+}

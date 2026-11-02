@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "scope": "UNIT_ONLY_NOT_MODEL_PERFORMANCE",
+  "fixtures": 2,
+  "official_CLI_exit": 0,
+  "aggregate_expected_F1": 97.5,
+  "aggregate_observed_F1": 97.50000000000001
+}

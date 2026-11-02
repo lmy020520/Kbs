@@ -1,0 +1,22 @@
+"""R2 component metrics have explicit denominators; no semantic or completeness Gold."""
+from io_utils import *
+from collections import Counter
+
+def report(run):
+    run=Path(run);ids=load(ROOT/'config/private_data_manifest.json')['sample_order'];plans=[load(run/f'plans/{sid}.json') if (run/f'plans/{sid}.json').exists() else {'status':'NOT_RUN'} for sid in ids]
+    results={arm:[load(run/f'predictions/{sid}_{arm}.json') if (run/f'predictions/{sid}_{arm}.json').exists() else {'sample_id':sid,'status':'NOT_RUN'} for sid in ids] for arm in ('B0-R2','B1-Batch-R2')}
+    calls=[load(p) for p in sorted((run/'calls').glob('*.json'))] if (run/'calls').exists() else []
+    checks=[c for r in results['B1-Batch-R2'] for c in r.get('extraction_validation',{}).get('checks',[])]
+    bindings=[c['binding'] for c in checks if c.get('binding') is not None];types=Counter(b['status'] for b in bindings)
+    returned=[c for c in calls if c['status']=='RETURNED'];plan_attempts=sum(c['stage']=='plan' for c in returned);b0_attempts=sum(c['stage']=='B0-R2' for c in returned)
+    compiled=sum(bool(p.get('execution_allowed')) and p.get('compiled',{}).get('status')=='PLAN_COMPILED' for p in plans)
+    b0_valid=sum(r['status']=='TABLE_VALID' for r in results['B0-R2']);join=sum(bool(r.get('join_completed')) for r in results['B1-Batch-R2']);wide=sum(r['status'] in ('JOIN_COMPLETED','JOIN_PARTIAL') for r in results['B1-Batch-R2'])
+    def ratio(n,d):return n/d if d else None
+    metrics={'fixed_questions':3,'plan_returned_calls':plan_attempts,'compiled_plans':compiled,'plan_executable_rate_attempted':ratio(compiled,plan_attempts),'plan_executable_rate_fixed3':compiled/3,'B0_returned_calls':b0_attempts,'B0_valid_tables':b0_valid,'B0_format_rate_attempted':ratio(b0_valid,b0_attempts),'B0_format_rate_fixed3':b0_valid/3,'B1_Join_completed':join,'B1_Join_completed_rate_fixed3':join/3,'B1_valid_wide_tables':wide,'B1_wide_table_rate_fixed3':wide/3,'plans_semantically_unverified':sum(p.get('status')=='PLAN_UNVERIFIED' for p in plans),'rejected_candidates':sum(c['status']=='FACT_REJECTED' for c in checks),'accepted_candidates':sum(c['status']=='FACT_VALID_MECHANICAL' for c in checks),'semantic_verified_candidates':0,'candidate_checks':len(checks),'binding_checks':len(bindings),'binding_status_counts':dict(types),'exact_source_binding_rate_checked':ratio(types['EXACT_SOURCE_MATCH'],len(bindings)),'semantic_support_rate':None,'natural_F1':None,'scope':'engineering / literal checks only; no semantic correctness inferred'}
+    write(run/'ENGINEERING_METRICS.json',metrics);write(run/'B0_R2_RESULTS.json',results['B0-R2']);write(run/'B1_BATCH_R2_RESULTS.json',results['B1-Batch-R2']);write(run/'PLANS.json',plans)
+    score=load(run/'OFFICIAL_RMS_RESULTS.json') if (run/'OFFICIAL_RMS_RESULTS.json').exists() else {'status':'NOT_SCORED','reason':'Separate CPU scorer; all three B1 Join executions required'}
+    write(run/'OFFICIAL_RMS_RESULTS.json',score)
+    environment=load(run/'MODEL_ENVIRONMENT.json') if (run/'MODEL_ENVIRONMENT.json').exists() else {}
+    supervision=load(run/'SUPERVISION.json') if (run/'SUPERVISION.json').exists() else {}
+    write(run/'RUN_SUMMARY.json',{'model':environment.get('model'),'revision':environment.get('revision'),'runtime_versions':environment.get('versions'),'GPU_task_wall_seconds':supervision.get('wall_seconds'),'peak_current_process_allocated_bytes':max([environment.get('load_peak_allocated_bytes',0)]+[c.get('usage',{}).get('peak_allocated_bytes',0) for c in returned]),'peak_current_process_reserved_bytes':max([environment.get('load_peak_reserved_bytes',0)]+[c.get('usage',{}).get('peak_reserved_bytes',0) for c in returned]),'version':'P0B_BASELINE_CONTRACT_REPAIR_R2','status':'R2_SMOKE_ENGINEERING_COMPLETE' if len(returned)==9 and compiled==3 and b0_valid==3 and wide==3 and all(r.get('extraction_complete') and r['status']=='JOIN_COMPLETED' for r in results['B1-Batch-R2']) else 'R2_SMOKE_ENGINEERING_PARTIAL','returned_calls':len(returned),'reserved_calls':len(calls),'input_tokens':sum(c.get('usage',{}).get('input_tokens',0) for c in returned),'output_tokens':sum(c.get('usage',{}).get('output_tokens',0) for c in returned),'API_cost_CNY':0,'engineering':metrics,'official_RMS':score,'scope':'PILOT_EXPLORATORY; all three consumed dev questions'})
+    (run/'RAW_PREDICTIONS.jsonl').write_text(''.join(__import__('json').dumps(c,ensure_ascii=False)+'\n' for c in calls))

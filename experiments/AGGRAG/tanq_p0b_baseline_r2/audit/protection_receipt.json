@@ -1,0 +1,12 @@
+{
+  "R1_files_unchanged": true,
+  "R1_protected_file_count": 55,
+  "frozen_smoke_bytes_equal": true,
+  "frozen_private_manifest_bytes_equal": true,
+  "new_model_calls": 0,
+  "GPU_used": false,
+  "paid_API_calls": 0,
+  "Gold_read_for_prediction": false,
+  "old_predictions_repaired": false,
+  "real_predictions_rescored": false
+}
