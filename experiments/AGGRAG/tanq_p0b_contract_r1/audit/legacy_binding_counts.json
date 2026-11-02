@@ -1,0 +1,31 @@
+{
+  "status": "READ_ONLY_DIAGNOSTIC_PASS",
+  "legacy_binding_counts": {
+    "QUOTE_NOT_FOUND": 8,
+    "EXACT_SOURCE_MATCH": 9,
+    "SAME_PAGE_OTHER_CHUNK": 2,
+    "DIFFERENT_PAGE_MATCH": 5,
+    "MISSING_QUOTE": 6
+  },
+  "raw_batch_roots": [
+    {
+      "sample_id": "469__wikitables_simple__dev@334",
+      "raw_type": "list",
+      "original_envelope_valid": false
+    },
+    {
+      "sample_id": "800__wikidata_simple__dev@567",
+      "raw_type": "list",
+      "original_envelope_valid": false
+    },
+    {
+      "sample_id": "595__wikidata_simple__dev@416",
+      "raw_type": "list",
+      "original_envelope_valid": false
+    }
+  ],
+  "original_files_unchanged": true,
+  "new_model_calls": 0,
+  "scores_recomputed": false,
+  "scope": "Literal localization only; legacy envelopes remain invalid; not semantic Gold"
+}

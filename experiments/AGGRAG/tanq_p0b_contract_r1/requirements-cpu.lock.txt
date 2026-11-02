@@ -1,0 +1,2 @@
+# R1 unit tests, compiler, validators and read-only diagnostics: Python3.11 stdlib only.
+# No dependencies, GPU, model weights or natural evaluation labels required.

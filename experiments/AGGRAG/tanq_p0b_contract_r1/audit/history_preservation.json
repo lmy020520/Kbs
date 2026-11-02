@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "protected_original_files": 67,
+  "changed_originals": 0,
+  "old_prediction_SHA_matches": 6,
+  "old_calls": 9,
+  "old_scores_recomputed": false,
+  "new_model_calls": 0,
+  "new_GPU_execution": false,
+  "all_history_preserved": true
+}

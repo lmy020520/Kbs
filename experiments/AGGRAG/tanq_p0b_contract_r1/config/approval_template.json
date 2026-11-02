@@ -1,0 +1,11 @@
+{
+  "authorized": false,
+  "version": "P0B_BASELINE_CONTRACT_REPAIR_R1",
+  "model_revision": "b25037543e9394b818fdfca67ab2a00ecc7dd641",
+  "max_calls": 9,
+  "wall_seconds": 7200,
+  "call_seconds": 1200,
+  "sample_ids": ["469__wikitables_simple__dev@334", "800__wikidata_simple__dev@567", "595__wikidata_simple__dev@416"],
+  "contract_sha256": "FILL_FROM_CONTRACT_DIGEST_AFTER_NEW_OWNER_APPROVAL",
+  "run_id": "FILL_NEW_R1_RUN_ID"
+}

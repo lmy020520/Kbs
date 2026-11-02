@@ -1,0 +1,55 @@
+test_all_rejections_retained (test_contract_r1.R1Tests.test_all_rejections_retained) ... ok
+test_and_requires_all_conditions (test_contract_r1.R1Tests.test_and_requires_all_conditions) ... ok
+test_and_same_attribute_distinct_rows (test_contract_r1.R1Tests.test_and_same_attribute_distinct_rows) ... ok
+test_batch_list_rejected_without_coercion (test_contract_r1.R1Tests.test_batch_list_rejected_without_coercion) ... ok
+test_batch_scalar_types (test_contract_r1.R1Tests.test_batch_scalar_types) ... ok
+test_bool_and_huge_number_rejected (test_contract_r1.R1Tests.test_bool_and_huge_number_rejected) ... ok
+test_cross_page (test_contract_r1.R1Tests.test_cross_page) ... ok
+test_declared_match_resolves_duplicate_text (test_contract_r1.R1Tests.test_declared_match_resolves_duplicate_text) ... ok
+test_dict_id_does_not_crash (test_contract_r1.R1Tests.test_dict_id_does_not_crash) ... ok
+test_direct_same_required_columns (test_contract_r1.R1Tests.test_direct_same_required_columns) ... ok
+test_duplicate_json_keys_rejected (test_contract_r1.R1Tests.test_duplicate_json_keys_rejected) ... ok
+test_duplicate_table_entities_invalid (test_contract_r1.R1Tests.test_duplicate_table_entities_invalid) ... ok
+test_empty_candidates_valid_empty_table (test_contract_r1.R1Tests.test_empty_candidates_valid_empty_table) ... ok
+test_empty_or_invalid (test_contract_r1.R1Tests.test_empty_or_invalid) ... ok
+test_entity_surface_aliases_normalized (test_contract_r1.R1Tests.test_entity_surface_aliases_normalized) ... ok
+test_exact_binding (test_contract_r1.R1Tests.test_exact_binding) ... ok
+test_explicit_null_missing_cell (test_contract_r1.R1Tests.test_explicit_null_missing_cell) ... ok
+test_filters_not_joined_across_subjects (test_contract_r1.R1Tests.test_filters_not_joined_across_subjects) ... ok
+test_generic_columns_not_substituted (test_contract_r1.R1Tests.test_generic_columns_not_substituted) ... ok
+test_invalid_plan_not_used_for_table (test_contract_r1.R1Tests.test_invalid_plan_not_used_for_table) ... ok
+test_long_table_invalid (test_contract_r1.R1Tests.test_long_table_invalid) ... ok
+test_missing_quote_preserved (test_contract_r1.R1Tests.test_missing_quote_preserved) ... ok
+test_no_conditions_supported (test_contract_r1.R1Tests.test_no_conditions_supported) ... ok
+test_nonfinite_json_rejected (test_contract_r1.R1Tests.test_nonfinite_json_rejected) ... ok
+test_numeric_filter_and_missing_value (test_contract_r1.R1Tests.test_numeric_filter_and_missing_value) ... ok
+test_numeric_strings_not_coerced (test_contract_r1.R1Tests.test_numeric_strings_not_coerced) ... ok
+test_or_allows_either (test_contract_r1.R1Tests.test_or_allows_either) ... ok
+test_owning_entity_attributes_remain_attached (test_contract_r1.R1Tests.test_owning_entity_attributes_remain_attached) ... ok
+test_parameterization_keeps_literals_out_of_sql (test_contract_r1.R1Tests.test_parameterization_keeps_literals_out_of_sql) ... ok
+test_pipeline_works_on_fixture_only (test_contract_r1.R1Tests.test_pipeline_works_on_fixture_only) ... ok
+test_plan_root_types_total (test_contract_r1.R1Tests.test_plan_root_types_total) ... ok
+test_plan_valid (test_contract_r1.R1Tests.test_plan_valid) ... ok
+test_program_only_actual_relation (test_contract_r1.R1Tests.test_program_only_actual_relation) ... ok
+test_quote_ambiguous_other_sources (test_contract_r1.R1Tests.test_quote_ambiguous_other_sources) ... ok
+test_quote_is_case_sensitive (test_contract_r1.R1Tests.test_quote_is_case_sensitive) ... ok
+test_quote_missing (test_contract_r1.R1Tests.test_quote_missing) ... ok
+test_quote_not_found (test_contract_r1.R1Tests.test_quote_not_found) ... ok
+test_ragged_table_invalid (test_contract_r1.R1Tests.test_ragged_table_invalid) ... ok
+test_raw_sql_rejected_not_repaired (test_contract_r1.R1Tests.test_raw_sql_rejected_not_repaired) ... ok
+test_same_page_other_chunk (test_contract_r1.R1Tests.test_same_page_other_chunk) ... ok
+test_single_value_conflict_explicit (test_contract_r1.R1Tests.test_single_value_conflict_explicit) ... ok
+test_storage_column_predicate_rejected (test_contract_r1.R1Tests.test_storage_column_predicate_rejected) ... ok
+test_strict_json_no_fence_repair (test_contract_r1.R1Tests.test_strict_json_no_fence_repair) ... ok
+test_table_cell_delimiter_rejected (test_contract_r1.R1Tests.test_table_cell_delimiter_rejected) ... ok
+test_undeclared_filter_rejected (test_contract_r1.R1Tests.test_undeclared_filter_rejected) ... ok
+test_unknown_id (test_contract_r1.R1Tests.test_unknown_id) ... ok
+test_unsupported_operator_rejected (test_contract_r1.R1Tests.test_unsupported_operator_rejected) ... ok
+test_unverified_semantic_alias_not_invented (test_contract_r1.R1Tests.test_unverified_semantic_alias_not_invented) ... ok
+test_wrong_subject_role_rejected (test_contract_r1.R1Tests.test_wrong_subject_role_rejected) ... ok
+test_zero_implicit_schema_conversion (test_contract_r1.R1Tests.test_zero_implicit_schema_conversion) ... ok
+
+----------------------------------------------------------------------
+Ran 50 tests in 0.016s
+
+OK

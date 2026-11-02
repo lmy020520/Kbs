@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "private_source_fragment_overlap": 0,
+  "raw_source_uploaded": false,
+  "model_weights_uploaded": false,
+  "original_call_logs_uploaded": false,
+  "unit_fixtures_only": true
+}

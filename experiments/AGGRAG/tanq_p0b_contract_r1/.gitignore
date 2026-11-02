@@ -1,0 +1,11 @@
+results/
+private/
+*.jsonl
+*.tar*
+*.safetensors
+*.gguf
+*.bin
+*.pyc
+__pycache__/
+.venv*/
+.env*
