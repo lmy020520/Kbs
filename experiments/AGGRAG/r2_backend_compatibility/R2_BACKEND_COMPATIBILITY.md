@@ -1,0 +1,11 @@
+# R2最终解码兼容性检查
+
+当前总状态：INSUFFICIENT_EVIDENCE。原服务器日志与实际安装环境尚未收到，不能宣称服务器初始化通过/失败已独立复测。
+
+已实际执行：从vLLM v0.8.5.post1官方源码用AST提取纯函数has_xgrammar_unsupported_json_features，对冻结R2完整Plan Schema执行，返回True。完整Schema有9处含minItems/maxItems的数组节点，未删改字段、逻辑或角色。源码URL/SHA、Schema SHA和所有路径见STATIC_CHECK.json。
+
+该固定版本支持XGrammar后端，但其标准JSON分派路径会在这些特征存在时回退；xgrammar:no-fallback应抛出ValueError。依赖锁列出xgrammar0.1.18，仅说明预期安装，不能证明服务器实际可导入。底层XGrammar库可能具备更多能力，不能据此宣称当前vLLM标准分派支持完整合同。
+
+服务器独立checker先保存原日志、冻结Schema及实际版本，CPU导入XGrammar并检查原Schema在安装分派中的行为。拒绝时不绕过guard、不转GBNF、不尝试第二条路线；仅当原样分派接受才加载tokenizer并初始化compiler/matcher。全程无LLM加载/生成。
+
+一个显式调用仅预留一次attempt，120秒外部监管，110秒新诊断栈转储；最多允许编号1/2且不自动重试。本轮只提供attempt1命令。依赖缺失不安装、不升级。若仍失败，建议停止当前TANQ工程投入，不启动R3/R4。

@@ -1,0 +1,58 @@
+{
+  "source_url": "https://raw.githubusercontent.com/vllm-project/vllm/v0.8.5.post1/vllm/model_executor/guided_decoding/utils.py",
+  "official_tag_source_sha256": "6a5cd732b103eaf708930821f9bc96aad8423fd942e9da8503196e4bfcb3aa16",
+  "actual_pure_guard_executed": true,
+  "schema_sha256": "86908a9e09cbf609077312748156ba211f6984974e62312cbfae06b82cd8a5e2",
+  "has_unsupported_features": true,
+  "unsupported_array_constraints": [
+    {
+      "path": "/properties/query/properties/predicates",
+      "minItems": 1,
+      "maxItems": 16
+    },
+    {
+      "path": "/properties/query/properties/outputs",
+      "minItems": 1,
+      "maxItems": 12
+    },
+    {
+      "path": "/properties/query/properties/filter/anyOf/1/properties/conditions",
+      "minItems": 0,
+      "maxItems": 16
+    },
+    {
+      "path": "/properties/query/properties/filter/anyOf/1/properties/conditions/items/anyOf/1/properties/conditions",
+      "minItems": 0,
+      "maxItems": 16
+    },
+    {
+      "path": "/properties/query/properties/filter/anyOf/1/properties/conditions/items/anyOf/1/properties/conditions/items/anyOf/1/properties/conditions",
+      "minItems": 0,
+      "maxItems": 16
+    },
+    {
+      "path": "/properties/query/properties/filter/anyOf/1/properties/conditions/items/anyOf/1/properties/conditions/items/anyOf/1/properties/conditions/items/anyOf/1/properties/conditions",
+      "minItems": 0,
+      "maxItems": 16
+    },
+    {
+      "path": "/properties/question_units",
+      "minItems": 1,
+      "maxItems": 128
+    },
+    {
+      "path": "/properties/relations",
+      "minItems": 1,
+      "maxItems": 16
+    },
+    {
+      "path": "/properties/unresolved",
+      "minItems": 0,
+      "maxItems": 32
+    }
+  ],
+  "schema_modified": false,
+  "server_raw_log_received": false,
+  "server_runtime_init_executed": false,
+  "model_calls": 0
+}

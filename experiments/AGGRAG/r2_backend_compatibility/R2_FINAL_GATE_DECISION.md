@@ -1,0 +1,9 @@
+# 最终关口：现有证据下
+
+**INSUFFICIENT_EVIDENCE**
+
+原始服务器日志和真实安装后端结果缺失，不能将已准备的检查工具写成已完成服务器核验。已实际核验的固定官方版本标准JSON路线对完整原Plan含有的不支持特征返回拒绝；因此没有根据建议运行GPU。
+
+下一步只允许用户执行一次已准备的CPU compatibility attempt1，120秒，不生成、不自动retry。取得实际回执后若安装路径拒绝完整合同，则CONTRACT_INCOMPATIBLE；依赖或初始化超时则BACKEND_INIT_BLOCKED；完整原合同初始化通过才可BACKEND_COMPATIBLE_NO_GENERATION，仍不批准GPU。
+
+保留Outlines原超时和R2源码/预测/SHA，不覆盖历史结论。若这次独立兼容检查仍失败，建议停止TANQ当前工程路线，不再自行推进R3/R4。

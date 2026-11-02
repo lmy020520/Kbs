@@ -1,0 +1,9 @@
+# 原合同与等价性
+
+没有Schema转换：直接从冻结commit24cadba0b0c04a23bd876fbcd2770086bc20959f的schemas.plan_schema()构造完整对象。canonical JSON为ensure_ascii=False、sort_keys=True、indent=2和末尾换行，SHA256为86908a9e09cbf609077312748156ba211f6984974e62312cbfae06b82cd8a5e2。
+
+服务器checker校验冻结PUBLIC_SHA256全部文件，再重新构造并对比Schema SHA。保持query、question_units、relations、unresolved及全部字段类型、additionalProperties=False、数组上下限、四层AND/OR表达、主体角色和关系。结构相同是本次输入合同未变化的依据，不是语义计划正确性的证明。
+
+未尝试删除minItems/maxItems、简化嵌套、改写正则或GBNF。因而不存在未经证明的替代合同可供试跑。若有人提出表达转换，必须另证允许JSON值语言等价；有限样例成功不能作为全域等价证明。本轮不授权这种开发。
+
+本检查仅完整原Plan，不宣称动态Table/Facts、Evidence ID枚举或GPU推理兼容性。未来生成仍必须保持原来源绑定和预测后验证；本轮未改变它们。

@@ -1,0 +1,9 @@
+# 原始日志与证据边界
+
+尚未取得服务器原始cpu_diagnostic.log。本地服务器输出目录只有R0/R1审核包，无本次CPU原日志。此前终端摘录显示在Plan FSM阶段超时124，但不能代替完整原日志或调用栈。旧尝试没有预先启用faulthandler，超时已结束，无法事后恢复当时的栈。
+
+待收集路径：/home/lmingyang/lmyproject/aggrag_smoke_runtime/r2_preflight_r2_dev3_20261102_01/cpu_diagnostic.log；以及同目录cpu_diagnostic.exit、cpu_diagnostic.py。服务器checker会复制原日志并记录SHA，缺失则INSUFFICIENT_EVIDENCE且不启动后端检查。原日志缺栈将单独记为历史证据限制，不伪造补齐。
+
+本地实际执行证据：STATIC_CHECK.json（官方标签纯guard运行）、HARNESS_TESTS.log（6项无模型工具测试）。没有本地vLLM/XGrammar运行结果，未下载依赖、模型或语料。
+
+服务器结果应包含ORIGINAL_cpu_diagnostic.log、ORIGINAL_LOG_RECEIPT.json、ORIGINAL_PLAN_SCHEMA.json、ENVIRONMENT.json、INSTALLED_DISPATCH_SOURCE.json、COMPATIBILITY.log、RESULT.json及SHA256.json。只有实际返回后才能完成环境与初始化判定。

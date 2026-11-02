@@ -1,0 +1,441 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "query": {
+      "additionalProperties": false,
+      "properties": {
+        "entity_type": {
+          "type": "string"
+        },
+        "filter": {
+          "anyOf": [
+            {
+              "additionalProperties": false,
+              "properties": {
+                "operator": {
+                  "enum": [
+                    "eq",
+                    "lt",
+                    "le",
+                    "gt",
+                    "ge"
+                  ],
+                  "type": "string"
+                },
+                "predicate": {
+                  "type": "string"
+                },
+                "value": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "number"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "predicate",
+                "operator",
+                "value"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "conditions": {
+                  "items": {
+                    "anyOf": [
+                      {
+                        "additionalProperties": false,
+                        "properties": {
+                          "operator": {
+                            "enum": [
+                              "eq",
+                              "lt",
+                              "le",
+                              "gt",
+                              "ge"
+                            ],
+                            "type": "string"
+                          },
+                          "predicate": {
+                            "type": "string"
+                          },
+                          "value": {
+                            "anyOf": [
+                              {
+                                "type": "string"
+                              },
+                              {
+                                "type": "number"
+                              }
+                            ]
+                          }
+                        },
+                        "required": [
+                          "predicate",
+                          "operator",
+                          "value"
+                        ],
+                        "type": "object"
+                      },
+                      {
+                        "additionalProperties": false,
+                        "properties": {
+                          "conditions": {
+                            "items": {
+                              "anyOf": [
+                                {
+                                  "additionalProperties": false,
+                                  "properties": {
+                                    "operator": {
+                                      "enum": [
+                                        "eq",
+                                        "lt",
+                                        "le",
+                                        "gt",
+                                        "ge"
+                                      ],
+                                      "type": "string"
+                                    },
+                                    "predicate": {
+                                      "type": "string"
+                                    },
+                                    "value": {
+                                      "anyOf": [
+                                        {
+                                          "type": "string"
+                                        },
+                                        {
+                                          "type": "number"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "required": [
+                                    "predicate",
+                                    "operator",
+                                    "value"
+                                  ],
+                                  "type": "object"
+                                },
+                                {
+                                  "additionalProperties": false,
+                                  "properties": {
+                                    "conditions": {
+                                      "items": {
+                                        "anyOf": [
+                                          {
+                                            "additionalProperties": false,
+                                            "properties": {
+                                              "operator": {
+                                                "enum": [
+                                                  "eq",
+                                                  "lt",
+                                                  "le",
+                                                  "gt",
+                                                  "ge"
+                                                ],
+                                                "type": "string"
+                                              },
+                                              "predicate": {
+                                                "type": "string"
+                                              },
+                                              "value": {
+                                                "anyOf": [
+                                                  {
+                                                    "type": "string"
+                                                  },
+                                                  {
+                                                    "type": "number"
+                                                  }
+                                                ]
+                                              }
+                                            },
+                                            "required": [
+                                              "predicate",
+                                              "operator",
+                                              "value"
+                                            ],
+                                            "type": "object"
+                                          },
+                                          {
+                                            "additionalProperties": false,
+                                            "properties": {
+                                              "conditions": {
+                                                "items": {
+                                                  "additionalProperties": false,
+                                                  "properties": {
+                                                    "operator": {
+                                                      "enum": [
+                                                        "eq",
+                                                        "lt",
+                                                        "le",
+                                                        "gt",
+                                                        "ge"
+                                                      ],
+                                                      "type": "string"
+                                                    },
+                                                    "predicate": {
+                                                      "type": "string"
+                                                    },
+                                                    "value": {
+                                                      "anyOf": [
+                                                        {
+                                                          "type": "string"
+                                                        },
+                                                        {
+                                                          "type": "number"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "required": [
+                                                    "predicate",
+                                                    "operator",
+                                                    "value"
+                                                  ],
+                                                  "type": "object"
+                                                },
+                                                "maxItems": 16,
+                                                "minItems": 0,
+                                                "type": "array"
+                                              },
+                                              "op": {
+                                                "enum": [
+                                                  "and",
+                                                  "or"
+                                                ],
+                                                "type": "string"
+                                              }
+                                            },
+                                            "required": [
+                                              "op",
+                                              "conditions"
+                                            ],
+                                            "type": "object"
+                                          }
+                                        ]
+                                      },
+                                      "maxItems": 16,
+                                      "minItems": 0,
+                                      "type": "array"
+                                    },
+                                    "op": {
+                                      "enum": [
+                                        "and",
+                                        "or"
+                                      ],
+                                      "type": "string"
+                                    }
+                                  },
+                                  "required": [
+                                    "op",
+                                    "conditions"
+                                  ],
+                                  "type": "object"
+                                }
+                              ]
+                            },
+                            "maxItems": 16,
+                            "minItems": 0,
+                            "type": "array"
+                          },
+                          "op": {
+                            "enum": [
+                              "and",
+                              "or"
+                            ],
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "op",
+                          "conditions"
+                        ],
+                        "type": "object"
+                      }
+                    ]
+                  },
+                  "maxItems": 16,
+                  "minItems": 0,
+                  "type": "array"
+                },
+                "op": {
+                  "enum": [
+                    "and",
+                    "or"
+                  ],
+                  "type": "string"
+                }
+              },
+              "required": [
+                "op",
+                "conditions"
+              ],
+              "type": "object"
+            }
+          ]
+        },
+        "outputs": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "column": {
+                "type": "string"
+              },
+              "predicate": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "predicate",
+              "column"
+            ],
+            "type": "object"
+          },
+          "maxItems": 12,
+          "minItems": 1,
+          "type": "array"
+        },
+        "predicates": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "cardinality": {
+                "enum": [
+                  "one",
+                  "many"
+                ],
+                "type": "string"
+              },
+              "kind": {
+                "enum": [
+                  "text",
+                  "number"
+                ],
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name",
+              "kind",
+              "cardinality"
+            ],
+            "type": "object"
+          },
+          "maxItems": 16,
+          "minItems": 1,
+          "type": "array"
+        },
+        "version": {
+          "enum": [
+            "r2"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "version",
+        "entity_type",
+        "predicates",
+        "outputs",
+        "filter"
+      ],
+      "type": "object"
+    },
+    "question_units": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "end": {
+            "type": "integer"
+          },
+          "kind": {
+            "enum": [
+              "entity_scope",
+              "output",
+              "condition",
+              "logic",
+              "syntax"
+            ],
+            "type": "string"
+          },
+          "start": {
+            "type": "integer"
+          },
+          "target": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "start",
+          "end",
+          "text",
+          "kind",
+          "target"
+        ],
+        "type": "object"
+      },
+      "maxItems": 128,
+      "minItems": 1,
+      "type": "array"
+    },
+    "relations": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "object_role": {
+            "enum": [
+              "value"
+            ],
+            "type": "string"
+          },
+          "predicate": {
+            "type": "string"
+          },
+          "subject_role": {
+            "enum": [
+              "answer_entity"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "predicate",
+          "subject_role",
+          "object_role"
+        ],
+        "type": "object"
+      },
+      "maxItems": 16,
+      "minItems": 1,
+      "type": "array"
+    },
+    "unresolved": {
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 32,
+      "minItems": 0,
+      "type": "array"
+    }
+  },
+  "required": [
+    "query",
+    "question_units",
+    "relations",
+    "unresolved"
+  ],
+  "type": "object"
+}
