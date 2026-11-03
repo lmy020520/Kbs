@@ -46,6 +46,7 @@ def main(a):
    validate_scores(scores,len(s['steps']));prediction=predict_first_error(scores)
    record={'id':current,'subset':s['subset'],'problem':s['problem'],'steps':s['steps'],'prompt':e['prompt'],'actual_input_token_ids':ids,'actual_input_tokens':len(ids),'scoring_token_id':151651,'scoring_token_positions':positions,'per_step_cpu_mapping':e['steps'],'raw_class_logits':marker_logits,'raw_class_probabilities':pairs,'step_scores':scores,'logits_dtype':str(result.logits.dtype),'probability_dtype':str(probabilities.dtype),'pred_first_error_fixed_05':prediction,'threshold':.5,'threshold_origin':'PROJECT_PREREGISTRATION','status':'SUCCESS','formal_forward_calls':1,'seconds_with_GPU_synchronization':elapsed,'GPU_max_allocated_bytes_cumulative':torch.cuda.max_memory_allocated(0),'GPU_max_reserved_bytes_cumulative':torch.cuda.max_memory_reserved(0)}
    append(out/'RAW_TRAJECTORY_SCORES_PRIVATE.jsonl',record);pred.append({'id':current,'subset':s['subset'],'status':'SUCCESS','step_scores':scores,'pred_first_error_fixed_05':prediction,'seconds':elapsed,'input_tokens':len(ids)});save(out/'PREDICTIONS_PRIVATE.json',pred)
+   print(f"Scored {len(pred)}/20: {current}; steps={len(scores)}; input_tokens={len(ids)}; seconds={elapsed:.3f}",flush=True)
    del inputs,result,probabilities
  except Exception as ex:
   traceback.print_exc();fatal={'stage':stage,'id':locals().get('current'),'error_type':type(ex).__name__,'error':str(ex),'automatic_retry':False,'actual_root_forward_attempts':actual_hooks};save(out/'WORKER_FAILURE.json',fatal)

@@ -1,5 +1,5 @@
 """User-invoked fixed snapshot download. No automatic retry, resume, model load or GPU."""
-import argparse,urllib.request,os
+import argparse,urllib.request,os,time
 from pathlib import Path
 from contract import *
 ROOT=Path(__file__).resolve().parent
@@ -14,13 +14,16 @@ for f in m['files']:
  url=f'{a.endpoint}/{m["model"]}/resolve/{m["revision"]}/{f["filename"]}'
  print('Downloading fixed file:',dest.name,'bytes',f['bytes'],flush=True)
  with urllib.request.urlopen(urllib.request.Request(url,headers={'User-Agent':'ProcessBench-C1-fixed05/1.0'}),timeout=60) as r,part.open('xb') as w:
-  size=0
+  size=0;start=time.monotonic();last=start
   while True:
    b=r.read(4*1024*1024)
    if not b:break
    size+=len(b)
    if size>f['bytes']:raise ContractError('Unexpected download size')
    w.write(b)
+   now=time.monotonic()
+   if now-last>=10:
+    speed=size/max(now-start,1e-6);eta=(f['bytes']-size)/max(speed,1e-6);print(f"  {size/1024**2:.1f}/{f['bytes']/1024**2:.1f} MiB; {speed/1024**2:.2f} MiB/s; estimated remaining {eta/60:.1f} min",flush=True);last=now
  if size!=f['bytes'] or sha(part)!=f['sha256']:raise ContractError('Downloaded SHA/size mismatch; preserve.part and stop')
  os.rename(part,dest);print('SHA256 verified:',dest.name,flush=True)
 save(target/'C1_SNAPSHOT_VERIFIED.json',{'model':m['model'],'revision':m['revision'],'files':verify_model(target,m),'download_endpoint':a.endpoint,'automatic_retry':False});print('Snapshot complete; no model inference.')
