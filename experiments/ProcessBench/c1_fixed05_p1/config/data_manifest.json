@@ -1,0 +1,6 @@
+{
+  "source_only_sha256": "8bcf17384d5314dbee2451843912e39f88617c9eb8b99629c22958d09af9a87e",
+  "expected_cpu_sha256": "b1b88b43720e3c943dff434a529d9a95167bc29b66b24267f05e64dd0d083b2b",
+  "reference_sha256_FOR_SCORER_ONLY": "dfc8472c5f053f56bdd257af4b7be1a29b0cc6d6dc4d6b2e609600ef885578d6",
+  "evaluation_reference_not_read_by_predictor": true
+}

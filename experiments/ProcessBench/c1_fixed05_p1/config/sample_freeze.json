@@ -1,0 +1,186 @@
+{
+  "source_freeze_sha256": "218ad0b24d1316d7334a15aa0a1f28b933f5b42976fd9c0427a0f7b284d79b3c",
+  "exposure": "PUBLISHED_BENCHMARK_TEST_SUBSETS_CONSUMED_PROJECT_DEV",
+  "cases": [
+    {
+      "order": 0,
+      "id": "gsm8k-61",
+      "subset": "gsm8k",
+      "steps": 6,
+      "visible_record_sha256": "b28907fbfc60a1be19543fd01d0339a921cd8e43ba3f21352caf2b7a4b3096df",
+      "expected_prompt_sha256": "c1bcdda7d96c3d8af3496113d849d7a33771b15da4f7ac0c1f0f5638a38237d2",
+      "expected_input_tokens": 367
+    },
+    {
+      "order": 1,
+      "id": "gsm8k-244",
+      "subset": "gsm8k",
+      "steps": 8,
+      "visible_record_sha256": "98a4808435e1cbe34c409fee29b633bd6955b496a0fe84a505be32be0480abef",
+      "expected_prompt_sha256": "1f47182d8e878e9828519a32b27b0624bd3a33fb07ef2453800b9ff43b35ae7b",
+      "expected_input_tokens": 426
+    },
+    {
+      "order": 2,
+      "id": "gsm8k-314",
+      "subset": "gsm8k",
+      "steps": 6,
+      "visible_record_sha256": "c9c91e268f6649f1e160982d806b38f4a075d5eb73f529629f87442178df6b62",
+      "expected_prompt_sha256": "2fe5af021e4330ec05f77e8cd3cc2ef2bd23039e77af2494674f64b1d0ae730f",
+      "expected_input_tokens": 419
+    },
+    {
+      "order": 3,
+      "id": "gsm8k-292",
+      "subset": "gsm8k",
+      "steps": 4,
+      "visible_record_sha256": "8102ab9207f5f94b17afa2221c043b1d184e9966b1f68bc73b9cfee42b87f177",
+      "expected_prompt_sha256": "0a8c432fa53b539f3c9d2d7e72c54563bfafd817daaad88ba214eb2d74b57377",
+      "expected_input_tokens": 236
+    },
+    {
+      "order": 4,
+      "id": "gsm8k-317",
+      "subset": "gsm8k",
+      "steps": 4,
+      "visible_record_sha256": "fa6ec6a2834b94eff9d5d8a3aca22bfddb44dd2c9a5060cf2354471be6ed483b",
+      "expected_prompt_sha256": "6ed3baca25c44146ea1bd196918fea46c1186c1eac8dd0cde18416cc9c67daee",
+      "expected_input_tokens": 263
+    },
+    {
+      "order": 5,
+      "id": "gsm8k-128",
+      "subset": "gsm8k",
+      "steps": 4,
+      "visible_record_sha256": "b6954cec04f1bb659c7cc7d1ea7f3bf6ae0880e6c539e604d06714e27d5dbee0",
+      "expected_prompt_sha256": "f92d9c0bae0c129a5bd50d9fe955c5c6960f0c348dd3270d687da8510d4af99c",
+      "expected_input_tokens": 246
+    },
+    {
+      "order": 6,
+      "id": "gsm8k-282",
+      "subset": "gsm8k",
+      "steps": 3,
+      "visible_record_sha256": "1cc8f8ef454d57357592a8f08d6c1b81d668b1f7bffc352c6836fc004f575756",
+      "expected_prompt_sha256": "27051397fca1bf3f971b03605e008a203024f942954bb0784b63db6b2a17d3a9",
+      "expected_input_tokens": 673
+    },
+    {
+      "order": 7,
+      "id": "gsm8k-107",
+      "subset": "gsm8k",
+      "steps": 4,
+      "visible_record_sha256": "81536eaacc457a89a9c6722b386234943c158e0c339b0413866dc67a081d3757",
+      "expected_prompt_sha256": "2810d8c3c44a1ec2f214a0f8f92bb48537624151a3c8fe58ba84ea1e062f7610",
+      "expected_input_tokens": 332
+    },
+    {
+      "order": 8,
+      "id": "gsm8k-168",
+      "subset": "gsm8k",
+      "steps": 5,
+      "visible_record_sha256": "47a18aa772cad6ac654318a930e00e01df373c641f67d68673efb7d14d7cf03a",
+      "expected_prompt_sha256": "052d61eebb7f79179b35e7cb9bd58105eedcf38203bc7511779c3655c2163022",
+      "expected_input_tokens": 234
+    },
+    {
+      "order": 9,
+      "id": "gsm8k-213",
+      "subset": "gsm8k",
+      "steps": 7,
+      "visible_record_sha256": "75bf7e643db02f0214e6a426269197752b8fe49bb299f8fd2cb8f2e0dd30548d",
+      "expected_prompt_sha256": "48d8789176445a2e8deb608ac8fdf6f033e9589ffa8beebedab1db094ea3b61f",
+      "expected_input_tokens": 365
+    },
+    {
+      "order": 10,
+      "id": "math-520",
+      "subset": "math",
+      "steps": 11,
+      "visible_record_sha256": "80671d90437967b708a6c4c9341e4b96184b2ea1d504a9e703de21d3c6f99db7",
+      "expected_prompt_sha256": "972016c8f28bd5f496e8945134667ab71dcde540bb41cd28242e32f72e8a57b0",
+      "expected_input_tokens": 943
+    },
+    {
+      "order": 11,
+      "id": "math-463",
+      "subset": "math",
+      "steps": 6,
+      "visible_record_sha256": "452c95ade48de5b4eda675f4a58c819b3a0af8a192431242811bb6bc9e48c3a3",
+      "expected_prompt_sha256": "6db3f313287b67201afbb8e9e88c66b0633fe08083eda3737b40163d4b0607da",
+      "expected_input_tokens": 1074
+    },
+    {
+      "order": 12,
+      "id": "math-337",
+      "subset": "math",
+      "steps": 5,
+      "visible_record_sha256": "e4dc7fd0d185bab3270f5953c6f51d3412a18454a8141148d6a6e78945bb9b13",
+      "expected_prompt_sha256": "cb5c270585a2d818147be5fbbe93d0d19b6fe0142ba4dd176d2cf563ba6b077c",
+      "expected_input_tokens": 596
+    },
+    {
+      "order": 13,
+      "id": "math-406",
+      "subset": "math",
+      "steps": 5,
+      "visible_record_sha256": "082994978329f8385b44b44f1b7eed1a1b41d013214bbdc5bba29604db16ff3f",
+      "expected_prompt_sha256": "97e00d1e18a57924490f4c317b545d59190b7d676c05cc51f96f82fe33c78715",
+      "expected_input_tokens": 654
+    },
+    {
+      "order": 14,
+      "id": "math-256",
+      "subset": "math",
+      "steps": 12,
+      "visible_record_sha256": "1b3f70e3b245586ebe63f03a8f91f5c65a614185fbbb70d5f088933b409f37b0",
+      "expected_prompt_sha256": "18d415732db050ba2dbd59d2b41dd81cb7da908d4076149a636eab64db7012bf",
+      "expected_input_tokens": 1153
+    },
+    {
+      "order": 15,
+      "id": "math-143",
+      "subset": "math",
+      "steps": 3,
+      "visible_record_sha256": "587b5b8fa9ccb8960a73b312012bdf4413abf64cc5aeab9a278bcf008c9957f5",
+      "expected_prompt_sha256": "74d9a2f430a460086e6ea59ed412e50527a62c04e051ea51d8b4943a4503eee0",
+      "expected_input_tokens": 347
+    },
+    {
+      "order": 16,
+      "id": "math-11",
+      "subset": "math",
+      "steps": 4,
+      "visible_record_sha256": "35f2689982d3efb68401bac5489857c52a1ec9bdcb49f51d21c7bef639b5c333",
+      "expected_prompt_sha256": "701e141efc291add171b5f1a6025d5c436d213a137a4f94809c45f6bc83eeb30",
+      "expected_input_tokens": 388
+    },
+    {
+      "order": 17,
+      "id": "math-580",
+      "subset": "math",
+      "steps": 6,
+      "visible_record_sha256": "146f593d8d32c062c31eeb6aeea957c2c5675ecef6e73cf910c89408b2ca4f38",
+      "expected_prompt_sha256": "3980d07144d716d40374585f5cf8103f0b8b99f9b9738742195ecc28261e1ae1",
+      "expected_input_tokens": 618
+    },
+    {
+      "order": 18,
+      "id": "math-341",
+      "subset": "math",
+      "steps": 4,
+      "visible_record_sha256": "1d3a9bd7bc157bb30a1380ece99cffcff5b16c36d2a9802fe47b7c0ed5b7b330",
+      "expected_prompt_sha256": "83aefe47481c3da088c0629b9c38d1e6feb91d973747f2befd21e74a706d8308",
+      "expected_input_tokens": 521
+    },
+    {
+      "order": 19,
+      "id": "math-893",
+      "subset": "math",
+      "steps": 5,
+      "visible_record_sha256": "0df78bf1ffdde1c303f27583564b23347875ad0afb6966a126f4127b09bc635d",
+      "expected_prompt_sha256": "7ad4e7bd6f768a6fddadb01164cd3da9a6a3f664dc662cbf09a82f27cdad3dd4",
+      "expected_input_tokens": 373
+    }
+  ]
+}

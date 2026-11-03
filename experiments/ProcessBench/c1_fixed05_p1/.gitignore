@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+results/
+state/
+CPU_PREFLIGHT_RECEIPT.json
+*.tar
+*.tar.gz
+*.safetensors
+private/
+models/

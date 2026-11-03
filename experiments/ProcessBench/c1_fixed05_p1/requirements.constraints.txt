@@ -1,0 +1,6 @@
+# Reuse previously approved server inference environment. No automatic installation.
+torch==2.6.0
+transformers==4.51.3
+tokenizers==0.21.1
+safetensors==0.5.3
+huggingface-hub==0.30.2
