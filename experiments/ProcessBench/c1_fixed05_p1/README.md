@@ -10,7 +10,7 @@ Prediction uses official fixed local custom AutoModel/AutoTokenizer files, after
 
 Execution adaptations: Python3.11; reuse the previously approved Torch2.6.0 / Transformers4.51.3 environment. CPU model loading then one explicit GPU transfer, BF16, eval/inference mode, no device_map/accelerate, no quantization/offload. `use_cache=False` for full-sequence classification, never prefix-cached scoring; no prompt or step changes. Record actual backend and source SHA; loading compatibility remains to be measured on the user server.
 
-Planned resources: one free RTX3090, batch1. Authorization permits at most2, but this delivery selects1 only, never automatically switches GPUs or starts8-card execution. OOM/load/token mismatch stops. Each trajectory reserved before forward; exclusive authorization lock prevents re-running with a new output name. Worker3550-second watchdog plus bounded termination stays within3600-second GPU task limit. No warmup forward/generation or automatic retry.
+Planned resources: one free RTX3090, batch1. Authorization permits at most2, but this delivery selects1 only, never automatically switches GPUs or starts8-card execution. OOM/load/token mismatch stops. Each trajectory reserved before forward; exclusive authorization lock in the fixed private data root prevents re-running with a new output name or code worktree. Worker3550-second watchdog plus bounded termination stays within3600-second GPU task limit. No warmup forward/generation or automatic retry.
 
 ## CPU verification
 

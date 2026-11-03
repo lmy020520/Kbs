@@ -30,8 +30,8 @@ def main(a):
  out=Path(a.out)
  if out.exists():raise ContractError('Output directory exists: never overwrite/rerun')
  inv=inventory(a.gpu)
- # Exclusive per-authorization lock anchored in this delivered project, not the output name.
- AuthorizationLock(ROOT/'state'/f'{auth["run_id"]}.USED.json').acquire(auth['run_id'])
+ # Exclusive authorization lock shared across code worktrees through the fixed private data root.
+ AuthorizationLock(Path(a.data)/'state'/f'{auth["run_id"]}.USED.json').acquire(auth['run_id'])
  out.mkdir(parents=True);save(out/'AUTHORIZATION_USED.json',auth);save(out/'GPU_INVENTORY.json',inv)
  env=os.environ.copy();env.update(CUDA_VISIBLE_DEVICES=str(a.gpu),HF_HUB_OFFLINE='1',TRANSFORMERS_OFFLINE='1',TOKENIZERS_PARALLELISM='false',PYTHONDONTWRITEBYTECODE='1');stop=threading.Event();th=threading.Thread(target=monitor,args=(a.gpu,stop,out),daemon=True);th.start();process=None;reason=None;start=time.monotonic()
  try:

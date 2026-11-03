@@ -1,6 +1,6 @@
 {
   ".gitignore": "5e9628c408b51544a2b2949cf10b3b9a7516fc2a4d95dafacdbc24f19842616c",
-  "README.md": "91dccbc44bd2b1867f48d1d8278938451b25fa02528707f46abb0e9b4b4ec4ca",
+  "README.md": "65b5faf4a14b2cb60b532fb550e7ea56ebf7fd0a6556beecacc317b771803798",
   "config/authorization.json": "152756574a1d139fdb240fd0a2f26e1d5efe3d029bca40f8ebc53db9270dbb29",
   "config/data_manifest.json": "14c0f69466f3492d08252b6289b216c02b14f803e7d32e906ce4d05d3e19ed6e",
   "config/environment.json": "5a6d66de9846611e81382dcd0f69bb6bc6fe431cb1fc301cb40a6f73b3234b90",
@@ -12,7 +12,7 @@
   "preflight.py": "03013376658f3ecbed106c63b86583879bc416b7e90a8fb1ec5431631b55dc2e",
   "requirements.constraints.txt": "7b85f617603ae81f7dc488fd104691b0fdf9b2d57d659078c60332b802046c5d",
   "run_server.sh": "82dabf14969a8fcc91daaf8e905d306a3ee84bc373aca95ae0ea8dac1bac7f7c",
-  "run_supervised.py": "ddc4d33e5e83db771f6175398496777874b0f3ba0b58a211135b708c493e6e05",
+  "run_supervised.py": "47af30d02ccc2a0a466b4e729546a6ce82ddadffe7769768db1a102200dcb7cb",
   "score_and_report.py": "18c98408a6624b88be4c9551adfcb0ba9901cd7ea58e398b9e3ad16f00ce3ad8",
   "tests/test_contract.py": "d9e46c2e9253ded2d96379291341f563b90d4d58ec654847bef57d7a3959ebcd",
   "verify_public.py": "7e489caf7d3c996415ed030153ad72fccee5300c0695a548e29763bb5fa60089",
